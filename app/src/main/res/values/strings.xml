@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">RetrofitKotlin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="character">Character</string>
+    <string name="episode">Episode</string>
+    <string name="location">Location</string>
+    <string name="todo">Todo</string>
+    <string name="name">Name</string>
+    <string name="id">Id</string>
+    <string name="status">Status</string>
+    <string name="type">Type</string>
+    <string name="episode_id">Episode Id</string>
+    <string name="episode_name">Episode Name</string>
+    <string name="created">Created</string>
+    <string name="air_date">Air Date</string>
+    <string name="location_id">Location Id</string>
+    <string name="location_name">Location Name</string>
+    <string name="location_dimension">Location Dimension</string>
+    <string name="location_created">Location Created</string>
+    />
+</resources>
