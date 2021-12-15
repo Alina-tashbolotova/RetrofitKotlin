@@ -36,6 +36,7 @@ class LocationFragment :
             recyclerLocation.isVisible = loadStates.refresh is LoadState.NotLoading
             progressBarLocation.isVisible = loadStates.refresh is LoadState.Loading
         }
+        swipeFresh()
     }
 
     private fun setOnItemClick(id: Int) {
@@ -54,7 +55,7 @@ class LocationFragment :
         }
     }
 
-    override fun swipeFresh() = with(binding) {
+    private fun swipeFresh() = with(binding) {
         locationSwipeFresh.setOnRefreshListener {
             locationAdapter.refresh()
             locationSwipeFresh.isRefreshing = false

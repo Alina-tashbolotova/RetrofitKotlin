@@ -33,6 +33,7 @@ class EpisodeFragment :
             recyclerEpisode.isVisible = loadStates.refresh is LoadState.NotLoading
             progressBarEpisode.isVisible = loadStates.refresh is LoadState.Loading
         }
+        swipeFresh()
     }
 
     private fun setOnItemListener(id: Int) {
@@ -52,7 +53,7 @@ class EpisodeFragment :
         }
     }
 
-    override fun swipeFresh() = with(binding) {
+    private fun swipeFresh() = with(binding) {
         episodeSwipeFresh.setOnRefreshListener {
             episodeAdapter.refresh()
             episodeSwipeFresh.isRefreshing = false

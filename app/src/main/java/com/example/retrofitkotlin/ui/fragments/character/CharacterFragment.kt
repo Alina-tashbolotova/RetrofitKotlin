@@ -37,8 +37,8 @@ class CharacterFragment :
         characterAdapter.addLoadStateListener { loadStates ->
             recyclerCharacter.isVisible = loadStates.refresh is LoadState.NotLoading
             progressBarCharacter.isVisible = loadStates.refresh is LoadState.Loading
-
         }
+        swipeFresh()
     }
 
     override fun setupObservers() {
@@ -50,7 +50,7 @@ class CharacterFragment :
         })
     }
 
-    override fun swipeFresh() {
+    private fun swipeFresh() {
         binding.characterSwipeFresh.setOnRefreshListener {
             characterAdapter.refresh()
             binding.characterSwipeFresh.isRefreshing = false

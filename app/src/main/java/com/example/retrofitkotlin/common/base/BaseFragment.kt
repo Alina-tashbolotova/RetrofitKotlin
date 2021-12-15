@@ -19,7 +19,6 @@ abstract class BaseFragment<ViewModel : BaseViewModel, Binding : ViewBinding>(
         setupListeners()
         setupRequest()
         setupObservers()
-        swipeFresh()
     }
 
     abstract fun initialization()
@@ -30,7 +29,6 @@ abstract class BaseFragment<ViewModel : BaseViewModel, Binding : ViewBinding>(
 
     abstract fun setupObservers()
 
-    abstract fun swipeFresh()
 
 
 }
