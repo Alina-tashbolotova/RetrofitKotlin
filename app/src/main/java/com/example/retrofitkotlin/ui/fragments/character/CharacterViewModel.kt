@@ -1,6 +1,5 @@
 package com.example.retrofitkotlin.ui.fragments.character
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.example.retrofitkotlin.common.base.BaseViewModel

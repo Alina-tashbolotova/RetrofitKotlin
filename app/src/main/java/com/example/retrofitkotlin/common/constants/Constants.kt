@@ -1,4 +1,4 @@
-package com.example.retrofitkotlin.constants
+package com.example.retrofitkotlin.common.constants
 
 object Constants {
 

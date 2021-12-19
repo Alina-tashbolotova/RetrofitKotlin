@@ -6,6 +6,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.liveData
+import com.example.retrofitkotlin.common.base.BaseRepository
 import com.example.retrofitkotlin.data.network.apiservice.EpisodeApiService
 import com.example.retrofitkotlin.data.network.apiservice.LocationApiService
 import com.example.retrofitkotlin.data.network.dtos.EpisodeModel
@@ -20,7 +21,7 @@ import javax.inject.Inject
 class LocationRepository @Inject constructor(
 
     private val service: LocationApiService
-) {
+):BaseRepository() {
 
     fun fetchLocations(): LiveData<PagingData<LocationModel>> {
         return Pager(
@@ -33,20 +34,8 @@ class LocationRepository @Inject constructor(
         ).liveData
     }
 
-    fun fetchLocation(id: Int): MutableLiveData<LocationModel> {
-        val data: MutableLiveData<LocationModel> = MutableLiveData()
-        service.fetchLocation(id).enqueue(object : Callback<LocationModel> {
-            override fun onResponse(call: Call<LocationModel>, response: Response<LocationModel>) {
-                if (response.isSuccessful) {
-                    data.value = response.body()
-                }
-            }
-
-            override fun onFailure(call: Call<LocationModel>, t: Throwable) {
-                data.value = null
-            }
-        })
-        return data
+    fun fetchLocation(id: Int) = doRequest {
+        service.fetchLocation(id)
     }
 
 }

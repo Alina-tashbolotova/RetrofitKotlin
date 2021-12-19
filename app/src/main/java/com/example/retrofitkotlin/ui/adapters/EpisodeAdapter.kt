@@ -7,11 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.retrofitkotlin.common.base.BaseComparator
 import com.example.retrofitkotlin.data.network.dtos.EpisodeModel
 import com.example.retrofitkotlin.databinding.ItemEpisodeBinding
-import kotlin.reflect.KFunction1
 
 class EpisodeAdapter(
 
-    private val onItemClick: KFunction1<Int, Unit>
+    private val onItemClick: (id: Int) -> Unit
 ) : PagingDataAdapter<EpisodeModel, EpisodeAdapter.EpisodeViewHolder>(
     BaseComparator()
 ) {

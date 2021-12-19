@@ -7,11 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.retrofitkotlin.common.base.BaseComparator
 import com.example.retrofitkotlin.data.network.dtos.LocationModel
 import com.example.retrofitkotlin.databinding.ItemLocationBinding
-import kotlin.reflect.KFunction1
 
 class LocationAdapter(
 
-    private val onItemClick: KFunction1<Int, Unit>
+    private val onItemClick: (id: Int) -> Unit
 ) : PagingDataAdapter<LocationModel, LocationAdapter.LocationViewHolder>(
     BaseComparator()
 ) {

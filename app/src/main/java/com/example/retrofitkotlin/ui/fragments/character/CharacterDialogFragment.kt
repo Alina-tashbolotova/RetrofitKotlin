@@ -15,7 +15,6 @@ import dagger.hilt.android.AndroidEntryPoint
 class CharacterDialogFragment : DialogFragment() {
 
     private var _binding: FragmentCharacterDialogBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

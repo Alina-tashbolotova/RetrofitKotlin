@@ -1,6 +1,6 @@
 package com.example.retrofitkotlin.data.network
 
-import com.example.retrofitkotlin.constants.Constants
+import com.example.retrofitkotlin.common.constants.Constants
 import com.example.retrofitkotlin.data.network.apiservice.CharacterApiService
 import com.example.retrofitkotlin.data.network.apiservice.EpisodeApiService
 import com.example.retrofitkotlin.data.network.apiservice.LocationApiService
@@ -31,15 +31,15 @@ class RetrofitClient {
         return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
     }
 
-    fun characterRetrofitClient(): CharacterApiService {
+    fun provideCharacterApiService(): CharacterApiService {
         return provideRetrofitClient.create(CharacterApiService::class.java)
     }
 
-    fun episodeRetrofitClient(): EpisodeApiService {
+    fun provideEpisodeApiService(): EpisodeApiService {
         return provideRetrofitClient.create(EpisodeApiService::class.java)
     }
 
-    fun locationRetrofitClient(): LocationApiService {
+    fun provideLocationApiService(): LocationApiService {
         return provideRetrofitClient.create(LocationApiService::class.java)
     }
 }

@@ -16,13 +16,13 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideCharacterApiService() = retrofitClient.characterRetrofitClient()
+    fun provideCharacterApiService() = retrofitClient.provideCharacterApiService()
 
     @Provides
     @Singleton
-    fun provideEpisodeApiService() = retrofitClient.episodeRetrofitClient()
+    fun provideEpisodeApiService() = retrofitClient.provideEpisodeApiService()
 
     @Provides
     @Singleton
-    fun provideLocationApiService() = retrofitClient.locationRetrofitClient()
+    fun provideLocationApiService() = retrofitClient.provideLocationApiService()
 }
