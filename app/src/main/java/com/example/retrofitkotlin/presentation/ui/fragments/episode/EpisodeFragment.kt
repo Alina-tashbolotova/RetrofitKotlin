@@ -1,4 +1,4 @@
-package com.example.retrofitkotlin.ui.fragments.episode
+package com.example.retrofitkotlin.presentation.ui.fragments.episode
 
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -10,9 +10,10 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.retrofitkotlin.R
 import com.example.retrofitkotlin.common.base.BaseFragment
 import com.example.retrofitkotlin.databinding.FragmentEpisodeBinding
-import com.example.retrofitkotlin.ui.adapters.EpisodeAdapter
-import com.example.retrofitkotlin.ui.adapters.paging.LoadStateAdapter
+import com.example.retrofitkotlin.presentation.ui.adapters.EpisodeAdapter
+import com.example.retrofitkotlin.presentation.ui.adapters.paging.LoadStateAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -45,11 +46,11 @@ class EpisodeFragment :
     }
 
     override fun setupObservers() {
-        viewModel.fetchEpisodes().observe(viewLifecycleOwner) {
-            lifecycleScope.launch {
+
+        lifecycleScope.launch {
+            viewModel.fetchEpisodes().collect {
                 episodeAdapter.submitData(it)
             }
-
         }
     }
 
@@ -60,10 +61,5 @@ class EpisodeFragment :
         }
     }
 
-    override fun setupListeners() {
-    }
-
-    override fun setupRequest() {
-    }
 
 }

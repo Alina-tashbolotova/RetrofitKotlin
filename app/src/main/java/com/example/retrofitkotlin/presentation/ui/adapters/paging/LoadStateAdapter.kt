@@ -1,4 +1,4 @@
-package com.example.retrofitkotlin.ui.adapters.paging
+package com.example.retrofitkotlin.presentation.ui.adapters.paging
 
 import android.view.ViewGroup
 import androidx.paging.LoadState
@@ -11,7 +11,7 @@ class LoadStateAdapter(private val retry: () -> Unit) : LoadStateAdapter<LoadSta
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState): LoadStateViewHolder {
-        return LoadStateViewHolder.create(parent,retry)
+        return LoadStateViewHolder.create(parent, retry)
     }
 
 

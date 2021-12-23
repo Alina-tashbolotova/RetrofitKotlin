@@ -7,7 +7,7 @@
     android:backgroundTint="@color/gray"
     app:cardCornerRadius="@dimen/dp25"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.character.detail.CharacterDetailFragment">
+    tools:context=".presentation.ui.fragments.character.detail.CharacterDetailFragment">
 
 
 

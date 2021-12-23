@@ -1,4 +1,4 @@
-package com.example.retrofitkotlin.ui.activity
+package com.example.retrofitkotlin.presentation.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

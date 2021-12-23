@@ -1,7 +1,5 @@
-package com.example.retrofitkotlin.ui.fragments.character
+package com.example.retrofitkotlin.presentation.ui.fragments.character
 
-import androidx.lifecycle.viewModelScope
-import androidx.paging.cachedIn
 import com.example.retrofitkotlin.common.base.BaseViewModel
 import com.example.retrofitkotlin.data.repositories.CharacterRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,6 +12,8 @@ class CharacterViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     var page = 1
-    fun fetchCharacters() = repository.fetchCharacters().cachedIn(viewModelScope)
+    fun fetchCharacters() = repository.fetchCharacters()
 
 }
+
+

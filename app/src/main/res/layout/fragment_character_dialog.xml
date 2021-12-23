@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    tools:context=".ui.fragments.character.CharacterDialogFragment">
+    tools:context=".presentation.ui.fragments.character.CharacterDialogFragment">
 
     <ImageView
         android:id="@+id/image_Dialog_character"

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_character"
-        android:name="com.example.retrofitkotlin.ui.fragments.character.CharacterFragment"
+        android:name="com.example.retrofitkotlin.presentation.ui.fragments.character.CharacterFragment"
         android:label="Character"
         tools:layout="@layout/fragment_character">
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/characterDetailFragment"
-        android:name="com.example.retrofitkotlin.ui.fragments.character.detail.CharacterDetailFragment"
+        android:name="com.example.retrofitkotlin.presentation.ui.fragments.character.detail.CharacterDetailFragment"
         android:label="{label}"
         tools:layout="@layout/fragment_character_detail">
         <argument
@@ -32,7 +32,7 @@
     </fragment>
     <dialog
         android:id="@+id/characterDialogFragment"
-        android:name="com.example.retrofitkotlin.ui.fragments.character.CharacterDialogFragment"
+        android:name="com.example.retrofitkotlin.presentation.ui.fragments.character.CharacterDialogFragment"
         android:label="Character_dialog"
         tools:layout="@layout/fragment_character_dialog">
 
@@ -43,7 +43,7 @@
     </dialog>
     <fragment
         android:id="@+id/episodeDetailFragment"
-        android:name="com.example.retrofitkotlin.ui.fragments.episode.detail.EpisodeDetailFragment"
+        android:name="com.example.retrofitkotlin.presentation.ui.fragments.episode.detail.EpisodeDetailFragment"
         android:label="Episode Detail"
         tools:layout="@layout/fragment_episode_detail" >
         <argument
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_episode"
-        android:name="com.example.retrofitkotlin.ui.fragments.episode.EpisodeFragment"
+        android:name="com.example.retrofitkotlin.presentation.ui.fragments.episode.EpisodeFragment"
         android:label="Episode" >
         <action
             android:id="@+id/action_episodeFragment_to_episodeDetailFragment"
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_location"
-        android:name="com.example.retrofitkotlin.ui.fragments.location.LocationFragment"
+        android:name="com.example.retrofitkotlin.presentation.ui.fragments.location.LocationFragment"
         android:label="Location" >
         <action
             android:id="@+id/action_locationFragment_to_locationDetailFragment"
@@ -68,7 +68,7 @@
     </fragment>
     <fragment
         android:id="@+id/locationDetailFragment"
-        android:name="com.example.retrofitkotlin.ui.fragments.location.detail.LocationDetailFragment"
+        android:name="com.example.retrofitkotlin.presentation.ui.fragments.location.detail.LocationDetailFragment"
         android:label="Location Detail"
         tools:layout="@layout/fragment_location_detail" >
         <argument

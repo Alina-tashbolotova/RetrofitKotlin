@@ -1,4 +1,4 @@
-package com.example.retrofitkotlin.ui.fragments.character
+package com.example.retrofitkotlin.presentation.ui.fragments.character
 
 import android.app.AlertDialog
 import android.app.Dialog

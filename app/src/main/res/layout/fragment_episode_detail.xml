@@ -7,7 +7,7 @@
     android:layout_margin="@dimen/dp10"
     android:backgroundTint="@color/gray"
     app:cardCornerRadius="@dimen/dp10"
-    tools:context=".ui.fragments.episode.detail.EpisodeDetailFragment">
+    tools:context=".presentation.ui.fragments.episode.detail.EpisodeDetailFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.example.retrofitkotlin.ui.adapters
+package com.example.retrofitkotlin.presentation.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -52,6 +52,7 @@ class CharacterAdapter(
         }
 
         fun onBind(model: CharacterModel) = with(binding) {
+
             txtItemCharacterName.text = model.name
             imageItemCharacter.load(model.image)
 

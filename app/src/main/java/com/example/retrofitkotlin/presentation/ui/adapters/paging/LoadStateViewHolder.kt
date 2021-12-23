@@ -1,4 +1,4 @@
-package com.example.retrofitkotlin.ui.adapters.paging
+package com.example.retrofitkotlin.presentation.ui.adapters.paging
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

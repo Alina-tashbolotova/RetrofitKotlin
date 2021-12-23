@@ -1,4 +1,4 @@
-package com.example.retrofitkotlin.ui.fragments.location
+package com.example.retrofitkotlin.presentation.ui.fragments.location
 
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -10,9 +10,10 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.retrofitkotlin.R
 import com.example.retrofitkotlin.common.base.BaseFragment
 import com.example.retrofitkotlin.databinding.FragmentLocationBinding
-import com.example.retrofitkotlin.ui.adapters.LocationAdapter
-import com.example.retrofitkotlin.ui.adapters.paging.LoadStateAdapter
+import com.example.retrofitkotlin.presentation.ui.adapters.LocationAdapter
+import com.example.retrofitkotlin.presentation.ui.adapters.paging.LoadStateAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -40,18 +41,19 @@ class LocationFragment :
     }
 
     private fun setOnItemClick(id: Int) {
-        findNavController().navigate(LocationFragmentDirections.actionLocationFragmentToLocationDetailFragment(
-            id = id
-        ))
+        findNavController().navigate(
+            LocationFragmentDirections.actionLocationFragmentToLocationDetailFragment(
+                id = id
+            )
+        )
     }
 
 
     override fun setupObservers() {
-        viewModel.fetchLocation().observe(viewLifecycleOwner) {
-            lifecycleScope.launch {
+        lifecycleScope.launch {
+            viewModel.fetchLocation().collect {
                 locationAdapter.submitData(it)
             }
-
         }
     }
 
@@ -62,10 +64,5 @@ class LocationFragment :
         }
     }
 
-    override fun setupListeners() {
-    }
-
-    override fun setupRequest() {
-    }
 
 }

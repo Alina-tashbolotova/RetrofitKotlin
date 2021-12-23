@@ -13,6 +13,7 @@ import com.example.retrofitkotlin.data.network.dtos.EpisodeModel
 import com.example.retrofitkotlin.data.network.dtos.LocationModel
 import com.example.retrofitkotlin.data.network.paginsources.EpisodePagingSource
 import com.example.retrofitkotlin.data.network.paginsources.LocationPagingSource
+import kotlinx.coroutines.flow.Flow
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,9 +22,9 @@ import javax.inject.Inject
 class LocationRepository @Inject constructor(
 
     private val service: LocationApiService
-):BaseRepository() {
+): BaseRepository() {
 
-    fun fetchLocations(): LiveData<PagingData<LocationModel>> {
+    fun fetchLocations(): Flow<PagingData<LocationModel>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 2
@@ -31,7 +32,7 @@ class LocationRepository @Inject constructor(
             pagingSourceFactory = {
                 LocationPagingSource(service)
             }
-        ).liveData
+        ).flow
     }
 
     fun fetchLocation(id: Int) = doRequest {

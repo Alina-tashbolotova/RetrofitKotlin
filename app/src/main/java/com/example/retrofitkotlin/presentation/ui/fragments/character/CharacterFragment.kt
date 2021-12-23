@@ -1,4 +1,4 @@
-package com.example.retrofitkotlin.ui.fragments.character
+package com.example.retrofitkotlin.presentation.ui.fragments.character
 
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -10,9 +10,10 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.retrofitkotlin.R
 import com.example.retrofitkotlin.common.base.BaseFragment
 import com.example.retrofitkotlin.databinding.FragmentCharacterBinding
-import com.example.retrofitkotlin.ui.adapters.CharacterAdapter
-import com.example.retrofitkotlin.ui.adapters.paging.LoadStateAdapter
+import com.example.retrofitkotlin.presentation.ui.adapters.CharacterAdapter
+import com.example.retrofitkotlin.presentation.ui.adapters.paging.LoadStateAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -42,12 +43,13 @@ class CharacterFragment :
     }
 
     override fun setupObservers() {
-
-        viewModel.fetchCharacters().observe(viewLifecycleOwner, {
-            lifecycleScope.launch {
+        lifecycleScope.launch {
+            viewModel.fetchCharacters().collect {
                 characterAdapter.submitData(it)
+
             }
-        })
+
+        }
     }
 
     private fun swipeFresh() {
@@ -72,12 +74,6 @@ class CharacterFragment :
                 image = photo
             )
         )
-    }
-
-    override fun setupListeners() {
-    }
-
-    override fun setupRequest() {
     }
 
 

@@ -1,4 +1,4 @@
-package com.example.retrofitkotlin.ui.adapters
+package com.example.retrofitkotlin.presentation.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

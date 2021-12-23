@@ -9,6 +9,7 @@ import com.example.retrofitkotlin.common.base.BaseRepository
 import com.example.retrofitkotlin.data.network.apiservice.CharacterApiService
 import com.example.retrofitkotlin.data.network.dtos.CharacterModel
 import com.example.retrofitkotlin.data.network.paginsources.CharacterPagingSource
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class CharacterRepository @Inject constructor(
@@ -16,7 +17,7 @@ class CharacterRepository @Inject constructor(
     private val service: CharacterApiService
 ) : BaseRepository() {
 
-    fun fetchCharacters(): LiveData<PagingData<CharacterModel>> {
+    fun fetchCharacters(): Flow<PagingData<CharacterModel>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 10,
@@ -25,7 +26,7 @@ class CharacterRepository @Inject constructor(
             pagingSourceFactory = {
                 CharacterPagingSource(service)
             }
-        ).liveData
+        ).flow
     }
 
     fun fetchCharacter(id: Int) = doRequest {

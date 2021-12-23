@@ -9,6 +9,7 @@ import com.example.retrofitkotlin.common.base.BaseRepository
 import com.example.retrofitkotlin.data.network.apiservice.EpisodeApiService
 import com.example.retrofitkotlin.data.network.dtos.EpisodeModel
 import com.example.retrofitkotlin.data.network.paginsources.EpisodePagingSource
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class EpisodeRepository @Inject constructor(
@@ -16,7 +17,7 @@ class EpisodeRepository @Inject constructor(
     private val service: EpisodeApiService
 ) : BaseRepository() {
 
-    fun fetchEpisodes(): LiveData<PagingData<EpisodeModel>> {
+    fun fetchEpisodes(): Flow<PagingData<EpisodeModel>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 2
@@ -24,7 +25,7 @@ class EpisodeRepository @Inject constructor(
             pagingSourceFactory = {
                 EpisodePagingSource(service)
             }
-        ).liveData
+        ).flow
     }
 
     fun fetchEpisode(id: Int) = doRequest{
