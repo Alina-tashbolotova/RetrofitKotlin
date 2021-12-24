@@ -1,5 +1,7 @@
 package com.example.retrofitkotlin.presentation.ui.fragments.location
 
+import androidx.lifecycle.viewModelScope
+import androidx.paging.cachedIn
 import com.example.retrofitkotlin.common.base.BaseViewModel
 import com.example.retrofitkotlin.data.repositories.LocationRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,6 +14,6 @@ class LocationViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     var page = 1
-    fun fetchLocation() = repository.fetchLocations()
+    fun fetchLocation() = repository.fetchLocations().cachedIn(viewModelScope)
 
 }
