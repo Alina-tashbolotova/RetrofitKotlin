@@ -47,7 +47,7 @@ class EpisodeFragment :
 
     override fun setupObservers() {
 
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.fetchEpisodes().collect {
                 episodeAdapter.submitData(it)
             }

@@ -50,7 +50,7 @@ class LocationFragment :
 
 
     override fun setupObservers() {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.fetchLocation().collect {
                 locationAdapter.submitData(it)
             }

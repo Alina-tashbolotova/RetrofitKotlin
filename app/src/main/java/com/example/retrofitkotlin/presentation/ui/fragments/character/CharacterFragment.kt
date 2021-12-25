@@ -43,7 +43,7 @@ class CharacterFragment :
     }
 
     override fun setupObservers() {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.fetchCharacters().collect {
                 characterAdapter.submitData(it)
 
