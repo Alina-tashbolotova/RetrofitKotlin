@@ -4,13 +4,10 @@ import com.example.retrofitkotlin.common.base.BaseViewModel
 import com.example.retrofitkotlin.data.network.dtos.LocationModel
 import com.example.retrofitkotlin.data.repositories.LocationRepository
 import com.example.retrofitkotlin.presentation.state.UIState
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import javax.inject.Inject
 
-@HiltViewModel
-class LocationDetailViewModel @Inject constructor(
+class LocationDetailViewModel(
 
     private val repository: LocationRepository
 ) : BaseViewModel() {

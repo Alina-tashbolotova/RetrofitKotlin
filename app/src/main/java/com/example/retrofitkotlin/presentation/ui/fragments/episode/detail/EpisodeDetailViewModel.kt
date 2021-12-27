@@ -4,13 +4,11 @@ import com.example.retrofitkotlin.common.base.BaseViewModel
 import com.example.retrofitkotlin.data.network.dtos.EpisodeModel
 import com.example.retrofitkotlin.data.repositories.EpisodeRepository
 import com.example.retrofitkotlin.presentation.state.UIState
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import javax.inject.Inject
 
-@HiltViewModel
-class EpisodeDetailViewModel @Inject constructor(
+
+class EpisodeDetailViewModel(
 
     private val repository: EpisodeRepository
 ) : BaseViewModel() {

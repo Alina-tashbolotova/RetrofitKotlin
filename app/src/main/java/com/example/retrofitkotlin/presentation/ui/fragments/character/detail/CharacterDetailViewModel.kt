@@ -4,13 +4,10 @@ import com.example.retrofitkotlin.common.base.BaseViewModel
 import com.example.retrofitkotlin.data.network.dtos.CharacterModel
 import com.example.retrofitkotlin.data.repositories.CharacterRepository
 import com.example.retrofitkotlin.presentation.state.UIState
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import javax.inject.Inject
 
-@HiltViewModel
-class CharacterDetailViewModel @Inject constructor(
+class CharacterDetailViewModel(
 
     private val repository: CharacterRepository
 ) : BaseViewModel() {

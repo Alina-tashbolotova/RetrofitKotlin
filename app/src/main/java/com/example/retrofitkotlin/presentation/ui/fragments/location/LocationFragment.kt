@@ -1,7 +1,6 @@
 package com.example.retrofitkotlin.presentation.ui.fragments.location
 
 import androidx.core.view.isVisible
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
@@ -12,17 +11,16 @@ import com.example.retrofitkotlin.common.base.BaseFragment
 import com.example.retrofitkotlin.databinding.FragmentLocationBinding
 import com.example.retrofitkotlin.presentation.ui.adapters.LocationAdapter
 import com.example.retrofitkotlin.presentation.ui.adapters.paging.LoadStateAdapter
-import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
-@AndroidEntryPoint
 class LocationFragment :
     BaseFragment<LocationViewModel, FragmentLocationBinding>(R.layout.fragment_location) {
 
     override val binding by viewBinding(FragmentLocationBinding::bind)
-    override val viewModel: LocationViewModel by viewModels()
+    override val viewModel: LocationViewModel by viewModel()
 
     private val locationAdapter =
         LocationAdapter(this::setOnItemClick)
@@ -51,7 +49,7 @@ class LocationFragment :
 
     override fun setupObservers() {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.fetchLocation().collect {
+            viewModel.fetchLocation().collectLatest {
                 locationAdapter.submitData(it)
             }
         }

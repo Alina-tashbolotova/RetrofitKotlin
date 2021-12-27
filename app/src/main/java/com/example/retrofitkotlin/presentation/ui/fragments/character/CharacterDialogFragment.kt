@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide
 import com.example.retrofitkotlin.databinding.FragmentCharacterDialogBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class CharacterDialogFragment : DialogFragment() {
 
     private var _binding: FragmentCharacterDialogBinding? = null

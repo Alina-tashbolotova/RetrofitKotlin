@@ -4,11 +4,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.example.retrofitkotlin.common.base.BaseViewModel
 import com.example.retrofitkotlin.data.repositories.LocationRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
-@HiltViewModel
-class LocationViewModel @Inject constructor(
+class LocationViewModel(
 
     private val repository: LocationRepository
 ) : BaseViewModel() {

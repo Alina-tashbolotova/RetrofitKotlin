@@ -9,7 +9,6 @@ import com.example.retrofitkotlin.R
 import com.example.retrofitkotlin.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

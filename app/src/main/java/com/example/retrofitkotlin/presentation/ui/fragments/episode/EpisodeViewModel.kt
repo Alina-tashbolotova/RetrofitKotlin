@@ -4,11 +4,8 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.example.retrofitkotlin.common.base.BaseViewModel
 import com.example.retrofitkotlin.data.repositories.EpisodeRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
-@HiltViewModel
-class EpisodeViewModel @Inject constructor(
+class EpisodeViewModel(
 
     private val repository: EpisodeRepository
 ) : BaseViewModel() {

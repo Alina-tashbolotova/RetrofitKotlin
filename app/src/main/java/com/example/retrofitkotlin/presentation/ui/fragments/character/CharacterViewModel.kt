@@ -7,8 +7,8 @@ import com.example.retrofitkotlin.data.repositories.CharacterRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@HiltViewModel
-class CharacterViewModel @Inject constructor(
+
+class CharacterViewModel(
 
     private val repository: CharacterRepository
 ) : BaseViewModel() {

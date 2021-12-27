@@ -1,7 +1,6 @@
 package com.example.retrofitkotlin.presentation.ui.fragments.episode
 
 import androidx.core.view.isVisible
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
@@ -12,16 +11,15 @@ import com.example.retrofitkotlin.common.base.BaseFragment
 import com.example.retrofitkotlin.databinding.FragmentEpisodeBinding
 import com.example.retrofitkotlin.presentation.ui.adapters.EpisodeAdapter
 import com.example.retrofitkotlin.presentation.ui.adapters.paging.LoadStateAdapter
-import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-@AndroidEntryPoint
 class EpisodeFragment :
     BaseFragment<EpisodeViewModel, FragmentEpisodeBinding>(R.layout.fragment_episode) {
 
     override val binding by viewBinding(FragmentEpisodeBinding::bind)
-    override val viewModel: EpisodeViewModel by viewModels()
+    override val viewModel: EpisodeViewModel by viewModel()
     private val episodeAdapter = EpisodeAdapter(this::setOnItemListener)
 
 
@@ -48,7 +46,7 @@ class EpisodeFragment :
     override fun setupObservers() {
 
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.fetchEpisodes().collect {
+            viewModel.fetchEpisodes().collectLatest {
                 episodeAdapter.submitData(it)
             }
         }
