@@ -120,5 +120,10 @@ dependencies {
     // Kotlin coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0-RC")
 
+    //Koin
+    def koin_version= "3.1.4"
+    // for main features for Android
+    implementation "io.insert-koin:koin-android:$koin_version"
+
 
 }
