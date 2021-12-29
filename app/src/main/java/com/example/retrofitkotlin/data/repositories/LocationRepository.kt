@@ -10,7 +10,7 @@ import com.example.retrofitkotlin.data.network.paginsources.LocationPagingSource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class LocationRepository @Inject constructor(
+class LocationRepository(
 
     private val service: LocationApiService
 ) : BaseRepository() {

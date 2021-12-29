@@ -12,7 +12,7 @@ import com.example.retrofitkotlin.data.network.paginsources.EpisodePagingSource
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class EpisodeRepository @Inject constructor(
+class EpisodeRepository (
 
     private val service: EpisodeApiService
 ) : BaseRepository() {
